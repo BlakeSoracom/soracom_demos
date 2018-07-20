@@ -79,7 +79,7 @@ if __name__ == '__main__':
        	 	if binCapacity == "Empty":
                 	binCapacity = "Full"
                 	print("Time to take out the garbage!")
-                	os.system("mosquitto_pub -h beam.soracom.io -t sorapi/bin -m 'Full'")
+                	os.system("mosquitto_pub -h beam.soracom.io -t sorapi_bin -m 'Full'")
                 	GPIO.output(26, GPIO.HIGH)
         	else:
                 	GPIO.output(26, GPIO.HIGH)
@@ -88,7 +88,7 @@ if __name__ == '__main__':
                 	binCapacity = "Empty"
                 	GPIO.output(26, GPIO.LOW)
                 	print("Thanks for emptying the garbage!")
-                	os.system("mosquitto_pub -h beam.soracom.io -t sorapi/bin -m 'Empty'")
+                	os.system("mosquitto_pub -h beam.soracom.io -t sorapi_bin -m 'Empty'")
         	else:
                 	GPIO.output(26, GPIO.LOW)
     	else:
